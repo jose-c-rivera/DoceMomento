@@ -16,6 +16,8 @@ import android.widget.ProgressBar
 import android.widget.Toast
 
 import com.example.docemomento.R
+import com.example.docemomento.MainActivity
+import android.content.Intent
 
 class LoginActivity : AppCompatActivity() {
 
@@ -101,6 +103,10 @@ class LoginActivity : AppCompatActivity() {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName
         // TODO : initiate successful logged in experience
+
+        val myIntent = Intent(this, MainActivity::class.java)
+        startActivity(myIntent)
+
         Toast.makeText(
             applicationContext,
             "$welcome $displayName",

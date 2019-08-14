@@ -1,5 +1,6 @@
 package com.example.docemomento
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -66,13 +67,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 // Handle the camera action
             }
             R.id.nav_gallery -> {
-
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, CuponFragment.newInstance())
+                    .commit()
             }
             R.id.nav_slideshow -> {
-
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, ConfeitariaFragment.newInstance())
+                    .commit()
             }
             R.id.nav_tools -> {
-
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, ProdutosFragment.newInstance())
+                    .commit()
+            }
+            R.id.nav_perfil -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, PerfilFragment.newInstance())
+                    .commit()
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
