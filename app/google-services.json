@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "83906164072",
+    "firebase_url": "https://doce-momento-2e5ac.firebaseio.com",
+    "project_id": "doce-momento-2e5ac",
+    "storage_bucket": "doce-momento-2e5ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83906164072:android:0a9a169e3e87a9c8",
+        "android_client_info": {
+          "package_name": "com.example.docemomento"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83906164072-sm2sdh6njgf3qhb89q1hqg6c7i4qunao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp3oIBSfM4_RafBrK1eh1UnxtqdGOisc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "83906164072-sm2sdh6njgf3qhb89q1hqg6c7i4qunao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

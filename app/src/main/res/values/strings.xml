@@ -18,14 +18,16 @@
     <string name="menu_confeitaria">Confeitaria</string>
     <string name="menu_produtos">Produtos</string>
     <string name="menu_perfil">Perfil</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Doce Momento</string>
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_register">Register</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entre</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="action_register">Criar Conta</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Bem vindo !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">A senha deve ter mais de 5 charches</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_register">RegisterActivity</string>
 </resources>

@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/holo_green_light">
+                android:background="@android:color/background_light">
 
+    <ImageView
+            android:layout_width="390dp"
+            android:layout_height="149dp" app:srcCompat="@drawable/cupons" android:id="@+id/cupons_background"
+            android:scaleType="fitXY"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp" android:layout_alignParentStart="true" android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" android:layout_alignParentLeft="true"/>
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cupon Fragment"
-            android:textSize="30sp"
-            android:layout_centerInParent="true"/>
+            android:text="Cupons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/cupons_text"
+            android:gravity="center"
+            android:layout_alignTop="@+id/cupons_background"
+            android:layout_marginTop="53dp" app:fontFamily="serif-monospace" android:textSize="36sp"
+            android:textStyle="bold"
+            android:background="#83FFFFFF" android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_alignRight="@+id/cupons_background" android:layout_marginRight="2dp"
+            android:layout_marginEnd="2dp" android:layout_alignEnd="@+id/cupons_background"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginStart="-2dp" android:layout_alignLeft="@+id/cupons_background"
+            android:layout_alignStart="@+id/cupons_background" android:layout_marginBottom="61dp"
+            android:layout_alignBottom="@+id/cupons_background"/>
+
 
 </RelativeLayout>

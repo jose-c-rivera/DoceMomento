@@ -9,21 +9,30 @@
             android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_cupon"
             android:icon="@drawable/ic_cupon_black_24dp"
             android:title="@string/menu_cupons" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_confeitaria"
             android:icon="@drawable/ic_cake_black_24dp"
             android:title="@string/menu_confeitaria" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_produtos"
             android:icon="@drawable/ic_store_black_24dp"
             android:title="@string/menu_produtos" />
         <item
             android:id="@+id/nav_perfil"
             android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/menu_perfil" />
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+        <item
+                android:id="@+id/nav_signout"
+                android:icon="@drawable/ic_signout_black_24dp"
+                android:title="@string/action_sign_out" />
     </group>
 
 </menu>

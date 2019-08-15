@@ -12,9 +12,15 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import android.view.View
+import com.example.docemomento.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+
+    var fbAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,11 +28,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+
+//        val fab: FloatingActionButton = findViewById(R.id.fab)
+//        fab.setOnClickListener { view ->
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                    .setAction("Action", null).show()
+//        }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val toggle = ActionBarDrawerToggle(
@@ -35,7 +42,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         navView.setNavigationItemSelectedListener(this)
+
+//        var btnLogOut = findViewById<TextView>(R.id.nav_signout)
+//
+//        btnLogOut.setOnClickListener{ view ->
+//            showMessage(view, "Logging Out...")
+//            signOut()
+//        }
+
+        fbAuth.addAuthStateListener {
+            if(fbAuth.currentUser == null){
+                this.finish()
+            }
+        }
     }
+
+    private fun signOut(){
+        fbAuth.signOut()
+    }
+
+    private fun showMessage(view: View, message: String){
+        Snackbar.make(view, message, Snackbar.LENGTH_INDEFINITE).setAction("Action", null).show()
+    }
+
     override fun onBackPressed() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -66,19 +95,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_home -> {
                 // Handle the camera action
             }
-            R.id.nav_gallery -> {
+            R.id.nav_cupon -> {
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.fragment_container, CuponFragment.newInstance())
                     .commit()
             }
-            R.id.nav_slideshow -> {
+            R.id.nav_confeitaria -> {
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.fragment_container, ConfeitariaFragment.newInstance())
                     .commit()
             }
-            R.id.nav_tools -> {
+            R.id.nav_produtos -> {
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.fragment_container, ProdutosFragment.newInstance())
@@ -89,6 +118,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .beginTransaction()
                     .replace(R.id.fragment_container, PerfilFragment.newInstance())
                     .commit()
+            }
+            R.id.nav_signout -> {
+                signOut()
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)

@@ -9,6 +9,9 @@
             android:roundIcon="@mipmap/ic_logo_doce_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".registration.RegisterActivity"
+                  android:label="Registrar">
+        </activity>
         <activity
                 android:name=".ui.login.LoginActivity"
                 android:label="@string/title_activity_login">
