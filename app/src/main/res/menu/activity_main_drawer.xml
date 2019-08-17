@@ -14,11 +14,11 @@
             android:title="@string/menu_cupons" />
         <item
             android:id="@+id/nav_confeitaria"
-            android:icon="@drawable/ic_cake_black_24dp"
+            android:icon="@drawable/ic_place_black_24dp"
             android:title="@string/menu_confeitaria" />
         <item
             android:id="@+id/nav_produtos"
-            android:icon="@drawable/ic_store_black_24dp"
+            android:icon="@drawable/ic_cake_black_24dp"
             android:title="@string/menu_produtos" />
         <item
             android:id="@+id/nav_perfil"

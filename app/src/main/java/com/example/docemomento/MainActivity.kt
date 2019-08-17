@@ -16,11 +16,22 @@ import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import android.view.View
 import com.example.docemomento.ui.login.LoginActivity
+import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
 
     var fbAuth = FirebaseAuth.getInstance()
+
+    //Firebase references
+    private var mDatabaseReference: DatabaseReference? = null
+    private var mDatabase: FirebaseDatabase? = null
+    private var mAuth: FirebaseAuth? = null
+    //UI elements
+    private var tvFirstName: TextView? = null
+    private var tvLastName: TextView? = null
+    private var tvEmail: TextView? = null
+    private var tvEmailVerifiied: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,12 +54,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         navView.setNavigationItemSelectedListener(this)
 
-//        var btnLogOut = findViewById<TextView>(R.id.nav_signout)
-//
-//        btnLogOut.setOnClickListener{ view ->
-//            showMessage(view, "Logging Out...")
-//            signOut()
-//        }
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, HomeFragment.newInstance())
+            .commit()
+
 
         fbAuth.addAuthStateListener {
             if(fbAuth.currentUser == null){
@@ -93,7 +103,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_home -> {
-                // Handle the camera action
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, HomeFragment.newInstance())
+                    .commit()
             }
             R.id.nav_cupon -> {
                 supportFragmentManager

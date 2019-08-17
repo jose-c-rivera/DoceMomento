@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/background_light">
+                android:layout_height="match_parent">
 
     <ImageView
             android:layout_width="390dp"
@@ -30,6 +29,28 @@
             android:layout_marginStart="-2dp" android:layout_alignLeft="@+id/cupons_background"
             android:layout_alignStart="@+id/cupons_background" android:layout_marginBottom="61dp"
             android:layout_alignBottom="@+id/cupons_background"/>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/firstCard"
+            android:layout_width="400dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="175dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="15dp"
+            app:cardBackgroundColor="@color/cardview_light_background" android:layout_alignParentTop="true">
+
+
+        <TextView
+                android:text="Cupons não estão disponíveis atualmente. Por favor, volte em breve."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView" android:textColor="#000000"
+                android:textStyle="bold" android:textSize="26sp"
+                android:fontFamily="serif-monospace" android:translationY="10dp"
+                android:layout_alignStart="@+id/firstCard" android:translationX="5dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 
 </RelativeLayout>
